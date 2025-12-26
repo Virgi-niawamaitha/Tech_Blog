@@ -1,0 +1,282 @@
+
+/* Birthday Balloons */
+.birthday-balloons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.balloon {
+  position: absolute;
+  width: 30px;
+  height: 40px;
+  background: radial-gradient(circle at 15px 15px, #ff88a1, #ff4d6d);
+  border-radius: 50%;
+  animation: float-balloon linear infinite;
+  bottom: -50px;
+  z-index: 1;
+}
+
+/* Rose Balloon Styling */
+.rose-balloon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background: none;
+  bottom: -50px;
+  z-index: 1;
+}
+
+.rose-balloon:before {
+  content: "🌹";
+  font-size: 30px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.balloon:before,
+.rose-balloon:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 50px;
+  background: #ffd6e0;
+  bottom: -50px;
+  left: 20px;
+}
+
+.rose-balloon:after {
+  content: "🌹";
+  font-size: 30px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.balloon:nth-child(odd),
+.rose-balloon:nth-child(odd):after {
+  content: "🌹";
+  color: #4d77ff;
+}
+
+.balloon:nth-child(3n),
+.rose-balloon:nth-child(3n):after {
+  content: "🌹";
+  color: #ffb347;
+}
+
+.balloon:nth-child(5n),
+.rose-balloon:nth-child(5n):after {
+  content: "🌹";
+  color: #77ff77;
+}
+
+@keyframes float-balloon {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+/* Birthday Cake */
+.birthday-cake {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.cake-base {
+  position: relative;
+  width: 180px;
+  margin: 0 auto;
+}
+
+.cake-top {
+  height: 25px;
+  width: 180px;
+  background: #ffcdf4;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.cake-middle {
+  height: 50px;
+  width: 180px;
+  background: #ff9ed2;
+}
+
+.cake-bottom {
+  height: 60px;
+  width: 180px;
+  background: #ff74b9;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.candle {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  background: #ffeaa0;
+  bottom: 135px;
+  z-index: 10;
+}
+
+.flame {
+  position: absolute;
+  width: 10px;
+  height: 15px;
+  background: radial-gradient(#ffdd1f, #ff5500);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  top: -13px;
+  left: 0;
+  animation: flicker 0.5s ease-in-out alternate infinite;
+}
+
+@keyframes flicker {
+  0% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scaleY(1.2) scaleX(0.9);
+    opacity: 1;
+  }
+}
+
+/* Birthday Card */
+.birthday-card {
+  background: linear-gradient(135deg, #ffffff, #ffedf2);
+  border: 2px solid #ffcce0;
+  cursor: pointer;
+}
+
+/* Gift Boxes */
+.gift-section {
+  margin-top: 3rem;
+}
+
+.gift-box {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gift-box:hover .gift-lid {
+  transform: translateY(-40px) rotateX(80deg);
+}
+
+.gift-lid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: #ff74b9;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  z-index: 2;
+  transform-origin: bottom;
+  transition: transform 0.5s ease;
+}
+
+.gift-box-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.memory-gift .gift-box-body {
+  background: linear-gradient(135deg, #8fa8ff, #4d77ff);
+}
+
+.memory-gift .gift-lid {
+  background: #4d77ff;
+}
+
+.compliment-gift .gift-box-body {
+  background: linear-gradient(135deg, #ff88a1, #ff4d6d);
+}
+
+.compliment-gift .gift-lid {
+  background: #ff4d6d;
+}
+
+.story-gift .gift-box-body {
+  background: linear-gradient(135deg, #ffcf8f, #ffb347);
+}
+
+.story-gift .gift-lid {
+  background: #ffb347;
+}
+
+/* Text animations */
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse-gentle {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
