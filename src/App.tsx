@@ -16,7 +16,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/Tech_Blog">
         <div className="min-h-screen flex flex-col bg-background" style={{
           background: "linear-gradient(135deg, #fff5f8, #fff9fb)"
         }}>
