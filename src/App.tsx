@@ -1,4 +1,4 @@
-
+﻿
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,7 +16,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/Tech_Blog">
+      <BrowserRouter >
         <div className="min-h-screen flex flex-col bg-background" style={{
           background: "linear-gradient(135deg, #fff5f8, #fff9fb)"
         }}>
@@ -35,3 +35,4 @@ const App = () => (
 );
 
 export default App;
+
